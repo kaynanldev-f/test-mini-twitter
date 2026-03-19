@@ -6,6 +6,7 @@ import { useState } from "react";
 import { registerUser } from "../services/auth.service";
 import Input from "../components/Input";
 import Button from "../components/Button";
+import Navbar from "../components/NavBar";
 
 export default function Register() {
   const { register, handleSubmit } = useForm();
@@ -30,66 +31,77 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-black via-[#0a0f2c] to-black">
-      <div className="w-full max-w-md text-white">
-        <h1 className="text-3xl font-bold text-center mb-6">Mini Twitter</h1>
+    <>
+      <Navbar />
 
-        <div className="flex justify-center mb-6 border-b border-gray-700">
-          <Link to="/login" className="px-4 pb-2 text-gray-400">
-            Login
-          </Link>
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-r bg-slate-100 dark:from-black dark:via-[#0a0f2c] dark:to-black">
+        <div className="w-full max-w-md text-white">
+          <h1 className="text-3xl font-bold text-center mb-6 text-blue-500 dark:text-white">
+            Mini Twitter
+          </h1>
 
-          <button className="px-4 pb-2 border-b-2 border-blue-500">
-            Cadastrar
-          </button>
-        </div>
+          <div className="flex justify-center mb-6 border-b border-gray-300 dark:border-gray-700">
+            <Link
+              to="/login"
+              className="px-4 pb-2 text-gray-600 dark:text-gray-400 font-bold"
+            >
+              Login
+            </Link>
 
-        <div className="bg-[#0f172a] p-6 rounded-xl shadow-lg">
-          <h2 className="text-xl font-semibold mb-2">Olá, vamos começar!</h2>
+            <button className="px-4 pb-2 border-b-2 border-blue-500 text-blue-500 font-bold">
+              Cadastrar
+            </button>
+          </div>
 
-          <p className="text-gray-400 text-sm mb-6">
-            Por favor, insira os dados solicitados para fazer cadastro.
-          </p>
+          <div className="bg-slate-100 dark:bg-[#0f172a] p-6 rounded-xl">
+            <h2 className="text-xl font-semibold mb-2 text-blue-500 dark:text-white">
+              Olá, vamos começar!
+            </h2>
 
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <Input
-              label="Nome"
-              name="name"
-              placeholder="Insira o seu nome"
-              register={register}
-              icon={<User size={18} />}
-            />
+            <p className="text-gray-600 dark:text-gray-400 text-sm mb-6">
+              Por favor, insira os dados solicitados para fazer cadastro.
+            </p>
 
-            <Input
-              label="E-mail"
-              name="email"
-              placeholder="Insira o seu e-mail"
-              register={register}
-              icon={<Mail size={18} />}
-            />
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <Input
+                label="Nome"
+                name="name"
+                placeholder="Insira o seu nome"
+                register={register}
+                icon={<User size={18} />}
+              />
 
-            <Input
-              label="Senha"
-              name="password"
-              type="password"
-              placeholder="Insira a sua senha"
-              register={register}
-              icon={<Lock size={18} />}
-            />
+              <Input
+                label="E-mail"
+                name="email"
+                placeholder="Insira o seu e-mail"
+                register={register}
+                icon={<Mail size={18} />}
+              />
 
-            {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+              <Input
+                label="Senha"
+                name="password"
+                type="password"
+                placeholder="Insira a sua senha"
+                register={register}
+                icon={<Lock size={18} />}
+              />
 
-            <Button isLoading={loading}>Continuar</Button>
-          </form>
+              {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
 
-          {/* Termos */}
-          <p className="text-xs text-gray-500 text-center mt-6">
-            Ao clicar em continuar, você concorda com nossos{" "}
-            <span className="underline">Termos de Serviço</span> e{" "}
-            <span className="underline">Política de Privacidade</span>.
-          </p>
+              <Button isLoading={loading}>Continuar</Button>
+            </form>
+
+            {/* Termos */}
+            <p className="text-xs text-gray-500 text-center mt-6">
+              Ao clicar em continuar, você concorda com nossos{" "}
+              <span className="underline">Termos de Serviço</span> e{" "}
+              <span className="underline">Política de Privacidade</span>.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

@@ -19,7 +19,9 @@ export default function Input({
 }: InputProps) {
   return (
     <div className="mb-4">
-      <label className="text-sm text-gray-400">{label}</label>
+      <label className="text-sm text-gray-600 dark:text-gray-400">
+        {label}
+      </label>
 
       <div className="relative mt-1">
         <input
@@ -28,8 +30,8 @@ export default function Input({
           {...register(name)}
           className="
             w-full p-3 pr-10 rounded-lg
-            bg-[#1e293b]
-            border border-gray-600
+           bg-slate-100 dark:bg-[#1e293b] text-gray-600
+            border border-gray-300 dark:border-gray-600
             focus:outline-none focus:border-blue-500
           "
         />
