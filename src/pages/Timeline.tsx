@@ -10,6 +10,8 @@ export default function Timeline() {
     <div className="bg-white dark:bg-gray-800">
       <Navbar />
 
+      <h1 className="text-xl font-bold mb-4 dark:text-white">Feed</h1>
+
       <div className="max-w-xl mx-auto mt-6">
         <CreatePost />
 

@@ -16,7 +16,7 @@ export default function PostCard({ post }: PostCardProps) {
   };
 
   return (
-    <div className="border p-4 rounded mb-4">
+    <div className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow hover:shadow-lg transition">
       <h2 className="font-bold">{post.title}</h2>
       <p>{post.content}</p>
 
