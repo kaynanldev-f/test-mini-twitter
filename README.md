@@ -1,73 +1,102 @@
-# React + TypeScript + Vite
+Mini Twitter
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🧠 Sobre o projeto
 
-Currently, two official plugins are available:
+O Mini Twitter é uma aplicação frontend que simula uma rede social simples, permitindo autenticação de usuários e interação com posts em tempo real.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+O foco do projeto foi criar uma aplicação com boa experiência do usuário, organização de código e práticas modernas de desenvolvimento frontend.
 
-## React Compiler
+🛠️ Tecnologias utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+React
 
-## Expanding the ESLint configuration
+TypeScript
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Axios
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+TanStack Query (React Query)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+React Hook Form
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Zod
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Tailwind CSS
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+✨ Funcionalidades
+🔐 Autenticação
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Login de usuário
+
+Cadastro de usuário
+
+Persistência de sessão com JWT
+
+Proteção de rotas
+
+📝 Posts
+
+Listagem de posts (timeline)
+
+Criação de novos posts
+
+Curtir posts
+
+Atualização automática da lista
+
+🔍 Experiência do usuário
+
+Scroll infinito
+
+Dark mode
+
+Feedback visual (loading, erros e sucesso)
+
+Skeleton loading
+
+Interface responsiva
+
+UI baseada no protótipo do Figma
+
+🎨 Diferenciais implementados
+
+Estrutura de projeto organizada por responsabilidades
+
+Componentes reutilizáveis (Input, Button, etc.)
+
+Tratamento de erros com feedback ao usuário
+
+Interface moderna com Tailwind CSS
+
+Uso de React Query para cache e sincronização de dados
+
+⚙️ Como rodar o projeto
+
+# Instalar dependências
+
+npm install
+
+# Rodar o projeto
+
+npm run dev
+
+A aplicação estará disponível em:
+http://localhost:5173
+
+🌍 Deploy
+
+[Acessar projeto](https://test-mini-twitter.vercel.app/register)
+
+📸 Preview
+
+![Login](loginScreenshoot.jpg)
+![Timeline](registerScreenshot.jpg)
+
+👨‍💻 Autor
+
+Desenvolvido por Kaynan Teixeira
+
+📧 kaynanldev@gmail.com
+
+💬 Observações
+
+Além dos requisitos solicitados, foram implementadas melhorias focadas em experiência do usuário e organização do código, buscando simular um ambiente real de desenvolvimento.
